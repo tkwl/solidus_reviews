@@ -21,11 +21,11 @@
 
 <%= f.field_container :images do %>
   <%= f.label :images %>
-  <table>
+  <table class="table">
     <% @review.images.each do |image| %>
       <tr>
         <td>
-          <%= image_tag image.url(:original) %>
+          <%= image_tag image.attachment.url(:original) %>
         </td>
         <td>
           <%= link_to_delete image, url: admin_review_image_url(@review, image, product_id: @review.product), no_text: true  %>

@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_dependency 'deface', '~> 1'
-  s.add_dependency 'solidus', ['>= 1.4', '< 3']
+  s.add_dependency 'spree', ['>= 1.4', '< 4']
   s.add_dependency 'solidus_support'
 
   s.add_development_dependency 'capybara'

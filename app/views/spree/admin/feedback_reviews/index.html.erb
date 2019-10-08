@@ -1,15 +1,15 @@
 <% content_for :page_title do %>
-	<%= I18n.t("spree.feedback_review_for", review: @review.title) %>
+	<%= Spree.t("feedback_review_for", review: @review.title) %>
 <% end %>
 
 <% content_for :page_actions do %>
-	<li><%= link_to I18n.t("spree.back_to_reviews"), admin_reviews_path %></li>
+	<li><%= link_to Spree.t("back_to_reviews"), admin_reviews_path %></li>
 <% end %>
 
-<% render 'spree/admin/shared/product_sub_menu' %>
+<% render 'spree/admin/shared/sub_menu/product' %>
 
 <% if @collection.any? %>
-	<table class="index">
+	<table class="table index">
 		<colgroup>
 			<col style="width: 30%;">
 			<col style="width: 20%;">

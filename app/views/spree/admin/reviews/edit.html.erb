@@ -2,10 +2,10 @@
 	<%= I18n.t("spree.editing_review_for_html", link: link_to(@review.product.name, product_path(@review.product))) %>
 <% end %>
 
-<% render 'spree/admin/shared/product_sub_menu' %>
+<% render 'spree/admin/shared/sub_menu/product' %>
 
 <%= form_for([:admin, @review]) do |f| %>
-	<div class="alpha eight columns">
+	<div class="col-md-12">
 		<% unless @review.title.blank? %>
 			<h2><%= @review.title %></h2>
 		<% end %>
@@ -14,7 +14,7 @@
 		</p>
 	</div>
 
-	<div class="omega eight columns">
+	<div class="col-md-8">
 		<%= render 'form', f: f %>
 	</div>
 

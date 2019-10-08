@@ -1,4 +1,4 @@
-<% admin_breadcrumb(link_to plural_resource_name(Spree::Product), spree.admin_products_path) %>
+<%# admin_breadcrumb(link_to plural_resource_name(Spree::Product), spree.admin_products_path) %>
 
 <% content_for :page_title do %>
   <%= I18n.t("spree.reviews") %>
@@ -52,10 +52,10 @@
   </div>
 <%- end -%>
 
-<%= paginate @reviews, theme: "solidus_admin" %>
+<%= paginate @reviews %>
 
 <% if @reviews.any? %>
-  <table class="index">
+  <table class="index table">
     <colgroup>
       <col style="width: 20%;">
       <col style="width: 10%;">
@@ -90,7 +90,7 @@
           </td>
           <td class="align-center">
             <% if review.verified_purchaser? %>
-              <%= solidus_icon('fa fa-check') %>
+            <i class="fa fa-check"></i>
             <% end %>
           </td>
           <td class="align-center">
@@ -102,7 +102,7 @@
           </td>
           <td class="align-center">
             <% review.images.each do |image| %>
-              <%= link_to image_tag(image.url(:product)), image.url(:original) %>
+                <%= link_to image_tag(image.attachment.url(:product)), image.attachment.url(:original) %>
             <% end %>
           </td>
           <td class="actions">
@@ -120,4 +120,4 @@
   </div>
 <% end %>
 
-<%= paginate @reviews, theme: "solidus_admin" -%>
+<%= paginate @reviews -%>

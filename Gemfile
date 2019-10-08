@@ -2,10 +2,12 @@
 
 source 'https://rubygems.org'
 
-branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
-gem 'solidus', git: 'https://github.com/solidusio/solidus.git', branch: branch
-gem 'solidus_auth_devise'
 
+#branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
+gem 'spree', git: 'https://github.com/spree/spree.git', branch: '3-0-stable'
+gem 'spree_auth_devise'
+gem 'rails', '~> 4.2.9'
+=begin
 # Needed to help Bundler figure out how to resolve dependencies, otherwise it takes forever to
 # resolve them
 if branch == 'master' || Gem::Version.new(branch[1..-1]) >= Gem::Version.new('2.10.0')
@@ -27,5 +29,5 @@ end
 group :development, :test do
   gem 'factory_bot', '> 4.10.0'
 end
-
+=end
 gemspec
