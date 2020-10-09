@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 
 
 #branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
-gem 'spree', git: 'https://github.com/spree/spree.git', branch: '3-0-stable'
+gem 'spree', git: 'https://github.com/spree/spree.git', branch: '3-2-stable'
 gem 'spree_auth_devise'
-gem 'rails', '~> 4.2.9'
+gem 'rails', '5.0.7.2'
 =begin
 # Needed to help Bundler figure out how to resolve dependencies, otherwise it takes forever to
 # resolve them
